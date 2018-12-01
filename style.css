@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Mountains+of+Christmas");
+
+body {
+  margin: 0;
+  background: #111;
+  font-family: "Mountains of Christmas", sans-serif;
+}
+
+h1 {
+  position: relative;
+  margin-top: 200px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0px 0px 8px rgba(255, 65, 185, 1);
+}
+
+#wire {
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  padding: 0;
+  height: 100px;
+  width: 100%;
+  top: -18px;
+  border-bottom: 3px solid #222;
+}
+
+#wire li {
+  position: relative;
+  list-style: none;
+  margin: 0 15px;
+  padding: 0;
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  border-radius: 50%;
+  top: 102px;
+  background: #fff;
+  /* animation */
+  animation-name: even-flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+#wire li:nth-child(odd) {
+  animation-name: odd-flash;
+}
+
+#wire li::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  border-radius: 4px;
+  top: -5px;
+  left: 0;
+  background: #444;
+}
+
+@keyframes even-flash {
+  0%,
+  100% {
+    background: rgba(228, 245, 247, 1);
+    box-shadow: 0px 2px 20px 4px rgba(228, 245, 247, 1);
+  }
+  50% {
+    background: rgba(228, 245, 247, 0.5);
+    box-shadow: 0px 2px 20px 4px rgba(228, 245, 247, 0.3);
+  }
+}
+
+@keyframes odd-flash {
+  0%,
+  100% {
+    background: rgba(rgba(226, 193, 98, 0.5));
+    box-shadow: 0px 2px 20px 4px rgba(226, 193, 98, 0.3);
+  }
+  50% {
+    background: rgba(226, 193, 98, 1);
+    box-shadow: 0px 2px 20px 4px rgba(226, 193, 98, 1);
+  }
+}
